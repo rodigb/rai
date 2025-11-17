@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import AgentList from "../../common/List";
+import Robot from "../../../statics/images/robot.gif";
+import Button from "../../common/Button";
 
 function HomePage() {
   const exampleListOfAgents = [
@@ -18,14 +20,23 @@ function HomePage() {
 
   return (
     <div className="md:container md:mx-auto ">
-      <h1 className="text-4xl text-[var(--text)] text-center font-bold mb-16">
+      <h1 className="text-4xl text-[var(--text)] text-center font-bold pt-4 pb-8">
         Welcome to RAI
       </h1>
+      <div className="flex items-center justify-center  ">
+        <img src={Robot.src} alt="Robot" style={{ width: "150px" }} />
+      </div>
       <div
-        className="md:container md:mx-auto border rounded-lg border-[var(--highlightedBackground)] max-h-[40vh] overflow-y-auto"
+        className="m-10 border border-[var(--highlightedBackground)] overflow-y-auto"
         style={{ backgroundColor: "#354366" }}
       >
         <AgentList agents={exampleListOfAgents} />
+      </div>
+      <div className="flex items-center justify-center mt-8 mb-8">
+        <Button
+          Label="Create New RAI"
+          onClick={() => alert("Button clicked!")}
+        />
       </div>
     </div>
   );
